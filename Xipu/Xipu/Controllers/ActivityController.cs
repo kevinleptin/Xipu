@@ -19,6 +19,13 @@ namespace Xipu.Controllers
         }
 
         [HttpGet]
+        [Route("activity/echo")]
+        public IHttpActionResult Echo()
+        {
+            return Ok("hello");
+        }
+
+        [HttpGet]
         [Route("activity/static")]
         public IHttpActionResult Statics()
         {
