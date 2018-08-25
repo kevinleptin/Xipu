@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201808200736427_initdb.Designer.cs">
       <DependentUpon>201808200736427_initdb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808240920283_changeUniqueIX.cs" />
+    <Compile Include="Migrations\201808240920283_changeUniqueIX.Designer.cs">
+      <DependentUpon>201808240920283_changeUniqueIX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chef.cs" />
     <Compile Include="Models\dto\ErrorMessage.cs" />
@@ -304,6 +308,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808200736427_initdb.resx">
       <DependentUpon>201808200736427_initdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808240920283_changeUniqueIX.resx">
+      <DependentUpon>201808240920283_changeUniqueIX.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

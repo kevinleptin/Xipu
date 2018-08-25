@@ -26,7 +26,7 @@ namespace Xipu.Models
         public string UserName { get; set; }
 
         [MaxLength(20)]
-        [Index(IsUnique = true)]
+        [Index("IX_PhoneEntrypoint",1,IsUnique = true)]
         public string PhoneNumber { get; set; }
 
         [MaxLength(20)]
@@ -36,6 +36,7 @@ namespace Xipu.Models
         public string Cuisine { get; set; }
 
         [MaxLength(20)]
+        [Index("IX_PhoneEntrypoint", 2, IsUnique = true)]
         public string Entrypoint { get; set; }
         
     }

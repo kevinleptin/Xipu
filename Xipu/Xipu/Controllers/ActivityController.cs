@@ -34,6 +34,15 @@ namespace Xipu.Controllers
             return Ok(x);
         }
 
+        [HttpGet]
+        [Route("activity/static/{entrypoint}")]
+        public IHttpActionResult StaticsEP(string entrypoint)
+        {
+            int chefCount = _context.Chefs.Count(c=>c.Entrypoint == entrypoint);
+            dynamic x = new { totalUser = chefCount };
+            return Ok(x);
+        }
+
         [HttpPost]
         [Route("activity/join")]
         public IHttpActionResult Join(Chef chef)
@@ -46,7 +55,7 @@ namespace Xipu.Controllers
                 return Ok(dto);
             }
 
-            if (_context.Chefs.FirstOrDefault(c => c.PhoneNumber == chef.PhoneNumber) != null)
+            if (_context.Chefs.FirstOrDefault(c => c.PhoneNumber == chef.PhoneNumber && c.Entrypoint == chef.Entrypoint) != null)
             {
                 dto.Status = 1;
                 dto.Msg = "该电话号码已参与成功";
